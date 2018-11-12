@@ -3,8 +3,8 @@
   <ion-tab tab="home">
     <ion-router-outlet name="home"></ion-router-outlet>
   </ion-tab>
-  <ion-tab tab="about">
-    <ion-router-outlet name="about"></ion-router-outlet>
+  <ion-tab tab="capture">
+    <ion-router-outlet name="capture"></ion-router-outlet>
   </ion-tab>
   <ion-tab tab="contact">
     <ion-router-outlet name="contact"></ion-router-outlet>
@@ -17,7 +17,7 @@
       <ion-label>Home</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button class="main-tab">
+    <ion-tab-button tab="capture" href="/tabs/(capture:capture)" class="main-tab">
       <ion-icon name="camera"></ion-icon>
     </ion-tab-button>
 

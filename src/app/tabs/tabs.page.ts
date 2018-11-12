@@ -1,8 +1,16 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tabs',
   templateUrl: 'tabs.page.html',
   styleUrls: ['tabs.page.scss']
 })
-export class TabsPage {}
+export class TabsPage {
+  constructor(private router: Router) {}
+
+  openCamera() {
+    console.log('trying to open camera');
+    this.router.navigate(['/tabs/(capture:capture)']);
+  }
+}
