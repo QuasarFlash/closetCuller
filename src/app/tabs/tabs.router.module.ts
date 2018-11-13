@@ -22,16 +22,15 @@ const routes: Routes = [
         component: HomePage
       },
       {
-        path: 'capture',
-        outlet: 'capture',
-        component: CaptureComponent
-      },
-      {
         path: 'contact',
         outlet: 'contact',
         component: ContactPage
       }
     ]
+  },
+  {
+    path: 'capture',
+    component: CaptureComponent
   },
   {
     path: '',
