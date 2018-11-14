@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
 import { HomePage } from '../home/home.page';
 import { ContactPage } from '../contact/contact.page';
+import { LoginComponent } from '../login/login.component';
 
 const routes: Routes = [
   {
@@ -27,10 +28,10 @@ const routes: Routes = [
       }
     ]
   },
-  // {
-  //   path: 'capture',
-  //   component: CaptureComponent
-  // },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
   {
     path: '',
     redirectTo: '/tabs/(home:home)',

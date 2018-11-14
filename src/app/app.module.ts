@@ -14,6 +14,7 @@ import { environment } from '../environments/environment';
 import { CaptureComponent } from './capture/capture.component';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [AppComponent, CaptureComponent],
