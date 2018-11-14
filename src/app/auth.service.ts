@@ -37,7 +37,7 @@ export class AuthService {
               this.afs.doc(`users/${creds.user.uid}`).set({});
             });
         });
-      this.router.navigate(['/start']);
+      this.router.navigate(['']);
     } catch (err) {
       console.error(err);
     }

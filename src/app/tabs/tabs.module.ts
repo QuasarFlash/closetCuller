@@ -8,7 +8,6 @@ import { TabsPageRoutingModule } from './tabs.router.module';
 import { TabsPage } from './tabs.page';
 import { ContactPageModule } from '../contact/contact.module';
 import { HomePageModule } from '../home/home.module';
-import { LoginComponent } from '../login/login.component';
 
 @NgModule({
   imports: [
@@ -19,6 +18,6 @@ import { LoginComponent } from '../login/login.component';
     HomePageModule,
     ContactPageModule
   ],
-  declarations: [TabsPage, LoginComponent]
+  declarations: [TabsPage]
 })
 export class TabsPageModule {}
