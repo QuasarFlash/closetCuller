@@ -11,10 +11,11 @@ import { AppComponent } from './app.component';
 
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
+import { CaptureComponent } from './capture/capture.component';
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [AppComponent, CaptureComponent],
+  entryComponents: [CaptureComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),

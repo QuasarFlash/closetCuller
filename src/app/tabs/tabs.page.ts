@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
+import { CaptureComponent } from '../capture/capture.component';
 
 @Component({
   selector: 'app-tabs',
@@ -7,10 +8,20 @@ import { Router } from '@angular/router';
   styleUrls: ['tabs.page.scss']
 })
 export class TabsPage {
-  constructor(private router: Router) {}
+  constructor(private modalCtrl: ModalController) {}
 
-  openCamera() {
+  async openCamera() {
     console.log('trying to open camera');
-    this.router.navigate(['/tabs/(capture:capture)']);
+    const modal = await this.modalCtrl.create({
+      component: CaptureComponent
+    });
+
+    await modal.present();
+
+    const data = await modal.onDidDismiss();
+    if (data.data) {
+      // open modal showing pic
+      console.log(data);
+    }
   }
 }
