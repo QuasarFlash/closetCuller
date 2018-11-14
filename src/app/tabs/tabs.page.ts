@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { CaptureComponent } from '../capture/capture.component';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-tabs',
@@ -8,7 +9,10 @@ import { CaptureComponent } from '../capture/capture.component';
   styleUrls: ['tabs.page.scss']
 })
 export class TabsPage {
-  constructor(private modalCtrl: ModalController) {}
+  constructor(
+    private modalCtrl: ModalController,
+    private storage: AngularFireStorage,
+    ) {}
 
   async openCamera() {
     console.log('trying to open camera');
@@ -23,5 +27,9 @@ export class TabsPage {
       // open modal showing pic
       console.log(data);
     }
+  }
+
+  uploadPic(pic) {
+    // Create file path using user id
   }
 }
