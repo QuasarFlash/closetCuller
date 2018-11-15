@@ -31,7 +31,9 @@ export class CaptureComponent implements OnInit {
 
   capture() {
     this.context.drawImage(this.video, 0, 0, this.canvas.width, this.canvas.height);
-    this.image = this.canvas.toDataURL();
+    this.canvas.toBlob(blob => {
+      this.image = blob;
+    });
     this.video.pause();
   }
 
