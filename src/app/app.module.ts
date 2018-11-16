@@ -18,6 +18,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
+import { ClosetService } from './closet.service';
 
 @NgModule({
   declarations: [AppComponent, CaptureComponent, LoginComponent],
@@ -35,6 +36,7 @@ import { AuthGuard } from './auth.guard';
     StatusBar,
     SplashScreen,
     AuthService,
+    ClosetService,
     AuthGuard,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

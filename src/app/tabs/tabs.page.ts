@@ -4,6 +4,7 @@ import { CaptureComponent } from '../capture/capture.component';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { AuthService } from '../auth.service';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { ClosetService } from '../closet.service';
 
 @Component({
   selector: 'app-tabs',
@@ -16,6 +17,7 @@ export class TabsPage {
     private authSvc: AuthService,
     private afs: AngularFirestore,
     private storage: AngularFireStorage,
+    private closetSvc: ClosetService
     ) {}
 
   async openCamera() {
@@ -33,14 +35,6 @@ export class TabsPage {
   }
 
   async addItem(pic, type) {
-    const uid = this.authSvc.currentUserID;
-    const closetRef = this.afs.collection(`users/${uid}/clothes`);
-    const date = new Date();
-    const itemRef = await closetRef.add({
-      last_worn: date.getDate(),
-      type: type
-    });
-    const picRef = this.storage.ref(itemRef.id);
-    picRef.put(pic);
+    this.closetSvc.addItem(pic, type);
   }
 }
