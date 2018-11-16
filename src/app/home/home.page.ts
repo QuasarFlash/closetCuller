@@ -13,6 +13,10 @@ export class HomePage {
     private authSvc: AuthService
     ) {}
 
+  go(type) {
+    this.router.navigateByUrl(`tabs/(home:home/${type})`);
+  }
+
   logout() {
     this.authSvc.logout().then(() => {
       this.router.navigate(['/login']);

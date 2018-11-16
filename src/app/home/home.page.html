@@ -11,7 +11,7 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <ion-card>
+        <ion-card (click)="go('pants')">
           <ion-card-header>
             <ion-card-title> Pants </ion-card-title>
           </ion-card-header>
@@ -24,7 +24,7 @@
         </ion-card>
       </ion-col>
       <ion-col>
-        <ion-card>
+        <ion-card (click)="go('tshirt')">
           <ion-card-header>
             <ion-card-title> Shirts </ion-card-title>
           </ion-card-header>
