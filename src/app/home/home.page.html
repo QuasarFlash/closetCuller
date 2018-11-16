@@ -1,39 +1,41 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Home</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()"> Logout </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
   <ion-grid>
-      <ion-row>
-          <ion-col>
-              <ion-card>
-                  <ion-card-header>
-                      <ion-card-title> Pants </ion-card-title>
-                  </ion-card-header>
-                  <ion-card-content>
-                      <ion-img width="460" height="460" src="https://ksassets.timeincuk.net/wp/uploads/sites/46/2015/03/napthumbincopy-920x920.jpg"> </ion-img>
-                  </ion-card-content>
-              </ion-card>
-            </ion-col>
-            <ion-col>
-                <ion-card>
-                    <ion-card-header>
-                        <ion-card-title> Shirts </ion-card-title>
-                    </ion-card-header>
-                    <ion-card-content>
-                        <ion-img width="500" height="500" src="http://static1.squarespace.com/static/58828a1df7e0ab83a562f0f6/5b3ece24562fa72b1ce2dc51/5b3eced9352f532fb8437a52/1530843127693/?format=1000w"> </ion-img>
-                    </ion-card-content>
-                </ion-card>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
-
-
-  <ion-button (click)="logout()">
-    Logout
-  </ion-button>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title> Pants </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-img
+              src="https://ksassets.timeincuk.net/wp/uploads/sites/46/2015/03/napthumbincopy-920x920.jpg"
+            >
+            </ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title> Shirts </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-img
+              src="http://static1.squarespace.com/static/58828a1df7e0ab83a562f0f6/5b3ece24562fa72b1ce2dc51/5b3eced9352f532fb8437a52/1530843127693/?format=1000w"
+            >
+            </ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

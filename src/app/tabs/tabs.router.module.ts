@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
 import { HomePage } from '../home/home.page';
 import { ContactPage } from '../contact/contact.page';
-import { LoginComponent } from '../login/login.component';
+import { ItemListComponent } from '../item-list/item-list.component';
 
 const routes: Routes = [
   {
@@ -20,6 +20,11 @@ const routes: Routes = [
         path: 'home',
         outlet: 'home',
         component: HomePage
+      },
+      {
+        path: 'home/:type',
+        outlet: 'home',
+        component: ItemListComponent
       },
       {
         path: 'contact',

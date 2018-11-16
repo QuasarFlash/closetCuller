@@ -8,6 +8,7 @@ import { TabsPageRoutingModule } from './tabs.router.module';
 import { TabsPage } from './tabs.page';
 import { ContactPageModule } from '../contact/contact.module';
 import { HomePageModule } from '../home/home.module';
+import { ItemListComponent } from '../item-list/item-list.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,6 @@ import { HomePageModule } from '../home/home.module';
     HomePageModule,
     ContactPageModule
   ],
-  declarations: [TabsPage]
+  declarations: [TabsPage, ItemListComponent]
 })
 export class TabsPageModule {}
