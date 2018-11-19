@@ -43,7 +43,9 @@ export class CaptureComponent implements OnInit {
   }
 
   stop() {
-    this.stream.getTracks().forEach(track => track.stop());
+    if (this.stream != null) {
+      this.stream.getTracks().forEach(track => track.stop());
+    }
   }
 
   start() {
