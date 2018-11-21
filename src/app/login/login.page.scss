@@ -1,0 +1,11 @@
+ion-content {
+  text-align: center;
+  flex-direction: column;
+}
+
+ion-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
