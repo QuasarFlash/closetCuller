@@ -64,7 +64,8 @@ export class CaptureComponent implements OnInit {
 
     browser.mediaDevices.getUserMedia(config).then(stream => {
       this.stream = stream;
-      this.video.src = window.URL.createObjectURL(stream);
+      //this.video.src = window.URL.createObjectURL(stream);
+      this.video.srcObject = stream;
       this.video.play();
     });
   }
