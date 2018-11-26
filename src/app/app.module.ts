@@ -15,10 +15,11 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { CaptureComponent } from './capture/capture.component';
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [AppComponent, CaptureComponent],
+  entryComponents: [CaptureComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
