@@ -8,16 +8,45 @@
 
 <ion-content>
   <ion-list>
-    <ion-list-header>
-      <ion-label>
-        Follow us on Twitter
-      </ion-label>
-    </ion-list-header>
-    <ion-item>
-      <ion-label>
-        <ion-icon name="logo-ionic" slot="start"></ion-icon>
-        @ionicframework
-      </ion-label>
-    </ion-item>
-  </ion-list>
+
+      <ion-item>
+          <ion-label>Time Threshold </ion-label>
+            <ion-badge item-end color="danger"> {{total}} {{time}}</ion-badge>
+            <ion-select [(ngModel)]="time">
+              <ion-select-option value="week">Weeks</ion-select-option>
+              <ion-select-option value="month" selected>Months</ion-select-option>
+              <ion-select-option value="year">Years</ion-select-option>
+            </ion-select>
+      </ion-item>
+    </ion-list>
+
+      <div [ngSwitch]="time">
+      
+        <div *ngSwitchCase="'week'">
+          <ion-range min="1" max="52" step="1" snaps="true" [(ngModel)]="total" color="danger">
+            <ion-icon range-left small color="danger" name="thermometer"></ion-icon>
+            <ion-icon range-right color="danger" name="thermometer"></ion-icon>
+          </ion-range>
+        </div>
+
+        <div *ngSwitchCase="'month'">
+          <ion-range min="1" max="12" step="1" snaps="true" [(ngModel)]="total" color="danger">
+            <ion-icon range-left small color="danger" name="thermometer"></ion-icon>
+            <ion-icon range-right color="danger" name="thermometer"></ion-icon> 
+          </ion-range>
+        </div>
+
+        <div *ngSwitchCase="'year'">
+          <ion-range min="1" max="5" step="1" snaps="true" [(ngModel)]="total" color="danger">
+            <ion-icon range-left small color="danger" name="thermometer"></ion-icon>
+            <ion-icon range-right color="danger" name="thermometer"></ion-icon> 
+          </ion-range>
+        </div>
+
+        <div *ngSwitchDefault>
+          <h1>Please Select Time</h1>
+        </div>
+
+      </div>
+
 </ion-content>
