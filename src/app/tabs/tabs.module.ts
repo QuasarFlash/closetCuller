@@ -9,6 +9,7 @@ import { TabsPageRoutingModule } from './tabs.router.module';
 import { TabsPage } from './tabs.page';
 import { SuggestionsPageModule } from '../Suggestions/Suggestions.module';
 import { HomePageModule } from '../home/home.module';
+import { ItemListPageModule } from '../item-list/item-list.module';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { HomePageModule } from '../home/home.module';
     FormsModule,
     TabsPageRoutingModule,
     HomePageModule,
-    SuggestionsPageModule
+    SuggestionsPageModule,
+    ItemListPageModule
   ],
   declarations: [TabsPage]
 })
