@@ -1,21 +1,25 @@
 <ion-content padding>
   <ion-grid>
     <ion-row align-items-center style="height: 94%">
-      <ion-col size="12">
-        <div><video #videoElement></video></div>
-      </ion-col>
+      <ion-col> <video #videoElement></video> </ion-col>
     </ion-row>
 
     <ion-row align-items-center>
-      <ion-col size="12">
-        <div>
-          <ion-button (click)="capture()" class="btn btn-primary"
-            >Capture</ion-button
-          >
-          <ion-button (click)="close()" class="btn btn-primary"
-            >Done</ion-button
-          >
-        </div>
+      <ion-col>
+        <ion-button (click)="capture()" class="btn btn-primary">
+          Capture
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="close()" [disabled]="!type" class="btn btn-primary">
+          Done
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-select placeholder="Select One" [(ngModel)]="type">
+          <ion-select-option value="tshirt">T-shirt</ion-select-option>
+          <ion-select-option value="pants">Pants</ion-select-option>
+        </ion-select>
       </ion-col>
     </ion-row>
   </ion-grid>

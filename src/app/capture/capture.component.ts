@@ -12,6 +12,7 @@ export class CaptureComponent implements OnInit {
   context: any;
   video: any;
   stream: any;
+  type: string;
   image: string;
 
   constructor(private modalCtrl: ModalController) {}
@@ -20,15 +21,12 @@ export class CaptureComponent implements OnInit {
     console.log('in capture component');
     this.video = this.videoElement.nativeElement;
     this.canvas = document.createElement('canvas');
-    // this.canvas.height = 100;
-    // this.canvas.width = 100;
     this.context = this.canvas.getContext('2d');
     this.start();
   }
 
   capture() {
     this.context.drawImage(this.video, 0, 0);
-    // this.canvas.width, this.canvas.height);
     this.canvas.toBlob(blob => {
       this.image = blob;
     });
