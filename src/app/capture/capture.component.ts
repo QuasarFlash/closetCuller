@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
 @Component({
@@ -7,7 +7,7 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./capture.component.scss']
 })
 export class CaptureComponent implements OnInit {
-  @ViewChild('videoElement') videoElement: any;
+  @ViewChild('videoElement') videoElement: ElementRef;
   canvas: any;
   context: any;
   video: any;
@@ -21,6 +21,8 @@ export class CaptureComponent implements OnInit {
     console.log('in capture component');
     this.video = this.videoElement.nativeElement;
     this.canvas = document.createElement('canvas');
+    this.canvas.setAttribute('height', 720);
+    this.canvas.setAttribute('width', 1280);
     this.context = this.canvas.getContext('2d');
     this.start();
   }
@@ -35,7 +37,10 @@ export class CaptureComponent implements OnInit {
 
   close() {
     this.stop();
-    this.modalCtrl.dismiss(this.image ? this.image : null);
+    this.modalCtrl.dismiss((this.image && this.type) ? {
+      image: this.image,
+      type: this.type
+    } : null);
   }
 
   stop() {
@@ -63,7 +68,6 @@ export class CaptureComponent implements OnInit {
       .getUserMedia(config)
       .then(stream => {
         this.stream = stream;
-        // this.video.src = window.URL.createObjectURL(stream);
         this.video.srcObject = stream;
         this.video.play();
       })

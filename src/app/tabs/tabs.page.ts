@@ -23,7 +23,7 @@ export class TabsPage {
 
     const data = await modal.onDidDismiss();
     if (data.data) {
-      this.addItem(data.data, 'tshirt');
+      this.addItem(data.data.image, data.data.type);
     }
   }
 
