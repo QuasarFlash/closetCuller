@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { tap, take } from 'rxjs/operators';
+import { tap, take, } from 'rxjs/operators';
+import { ClosetService } from '../closet.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-item-list',
@@ -10,12 +12,23 @@ import { tap, take } from 'rxjs/operators';
 export class ItemListPage implements OnInit {
 
   type: string;
+  items$: Observable<any>;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(
+    private route: ActivatedRoute,
+    private closetSvc: ClosetService,
+    ) {
     this.route.paramMap.pipe(
       tap(params => this.type = params.get('type')),
       take(1)
     ).subscribe();
+    this.items$ = this.closetSvc.getItems(this.type);
+    this.items$.subscribe((items) => {
+      // const snap: QueryDocumentSnapshot = items[0].payload.doc;
+      // console.log(snap.id);
+      // console.log(snap.data());
+      console.log(items);
+    });
   }
 
   ngOnInit() {

@@ -27,7 +27,12 @@ export class ClosetService {
       type: type
     });
     const picRef = this.storage.ref(itemRef.id);
-    picRef.put(pic);
+    await picRef.put(pic);
+    picRef.getDownloadURL().subscribe(url => {
+      itemRef.update({
+        picUrl: url
+      });
+    });
   }
 
   getItems(type) {

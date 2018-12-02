@@ -8,5 +8,7 @@
 </ion-header>
 
 <ion-content padding>
-  Hello
+ <ion-card *ngFor='let item of items$ | async'> 
+   <ion-img [src]="item.picUrl"></ion-img>
+ </ion-card>
 </ion-content>
