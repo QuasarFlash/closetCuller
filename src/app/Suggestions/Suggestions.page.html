@@ -61,9 +61,9 @@
     <div>
       <ion-grid > 
         <ion-row>
-          <ion-col *ngFor="let image of images" class="flex-container">
+          <ion-col *ngFor='let item of items$ | async' class="flex-container">
             <ion-card class="flex-item"> 
-              <ion-img [src]= "image" ></ion-img>
+              <ion-img [src]= "item.picUrl" ></ion-img>
             </ion-card>
           </ion-col>
         </ion-row>
