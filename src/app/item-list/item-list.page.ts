@@ -25,6 +25,12 @@ export class ItemListPage implements OnInit {
     this.items$ = this.closetSvc.getItems(this.type);
   }
 
+  getDays(mill) {
+    let days = (Date.now() - mill) / (1000 * 60 * 60 * 24);
+    days = Math.floor(days);
+    return days;
+  }
+
   ngOnInit() {
   }
 

@@ -10,5 +10,6 @@
 <ion-content padding>
  <ion-card *ngFor='let item of items$ | async'> 
    <ion-img [src]="item.picUrl"></ion-img>
+   <ion-card-content>Last worn {{ getDays(item.last_worn) }} days ago.</ion-card-content>
  </ion-card>
 </ion-content>

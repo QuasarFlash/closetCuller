@@ -8,7 +8,7 @@ import { AuthService } from './auth.service';
 })
 export class ClosetService {
   uid: string;
-  date: Date;
+  date: number;
   closetRef: AngularFirestoreCollection;
 
   constructor(
@@ -17,13 +17,13 @@ export class ClosetService {
     private authSvc: AuthService
   ) {
     this.uid = this.authSvc.currentUserID;
-    this.date = new Date();
+    this.date = Date.now();
     this.closetRef = this.afs.collection(`users/${this.uid}/clothes`);
   }
 
   async addItem(pic, type) {
     const itemRef = await this.closetRef.add({
-      last_worn: this.date.getMilliseconds(),
+      last_worn: this.date,
       type: type
     });
     const picRef = this.storage.ref(itemRef.id);
