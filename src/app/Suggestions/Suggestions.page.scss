@@ -1,1 +1,29 @@
-
+.image-container {
+    min-height: 200px;
+    background-size: cover;
+}
+// source: https://codepen.io/dudleystorey/pen/Kgofa
+.flex-container {
+    padding: .5vw;
+    font-size: 0;
+    display: -ms-flexbox;
+    -ms-flex-wrap: wrap;
+    -ms-flex-direction: column;
+    -webkit-flex-flow: row wrap; 
+    flex-flow: row wrap; 
+    display: -webkit-box;
+    display: flex;
+    
+  }
+  
+  .flex-item {
+    -webkit-box-flex: auto;
+    -ms-flex: auto;
+    flex: auto; 
+    width: 200px; 
+    margin: .5vw;
+  }
+  ion-card {
+    width: 100%; 
+    height: auto; 
+  }

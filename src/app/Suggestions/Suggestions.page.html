@@ -4,9 +4,7 @@
       Suggestions
     </ion-title>
   </ion-toolbar>
-</ion-header>
 
-<ion-content>
   <ion-list>
 
       <ion-item>
@@ -44,9 +42,33 @@
         </div>
 
         <div *ngSwitchDefault>
-          <h1>Please Select Time</h1>
+         
         </div>
-
+        <div>
+            <ion-item>
+              <ion-label>Filter </ion-label>
+              <ion-select [(ngModel)]="type" (ionChange)='displayItems($event)'>
+                  <ion-select-option value="tshirt" selected>T-shirt</ion-select-option>
+                  <ion-select-option value="pants">Pants</ion-select-option>
+              </ion-select>
+            </ion-item>
+        </div>
       </div>
+    </ion-header>
+    
+  <ion-content>
+    
+    <div>
+      <ion-grid > 
+        <ion-row>
+          <ion-col *ngFor="let image of images" class="flex-container">
+            <ion-card class="flex-item"> 
+              <ion-img [src]= "image" ></ion-img>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+          
+    </div>
 
-</ion-content>
+  </ion-content>
