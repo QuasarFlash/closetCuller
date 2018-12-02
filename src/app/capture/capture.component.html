@@ -6,12 +6,16 @@
 
     <ion-row align-items-center>
       <ion-col>
-        <ion-button (click)="capture()" class="btn btn-primary">
+        <ion-button
+          (click)="capture()"
+          [disabled]="!type"
+          class="btn btn-primary"
+        >
           Capture
         </ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="close()" [disabled]="!type" class="btn btn-primary">
+        <ion-button (click)="close()" class="btn btn-primary">
           Done
         </ion-button>
       </ion-col>

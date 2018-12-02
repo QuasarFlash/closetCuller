@@ -23,7 +23,7 @@ export class ClosetService {
 
   async addItem(pic, type) {
     const itemRef = await this.closetRef.add({
-      last_worn: this.date,
+      last_worn: this.date.getMilliseconds(),
       type: type
     });
     const picRef = this.storage.ref(itemRef.id);

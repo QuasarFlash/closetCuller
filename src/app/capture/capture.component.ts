@@ -22,7 +22,7 @@ export class CaptureComponent implements OnInit {
     this.video = this.videoElement.nativeElement;
     this.canvas = document.createElement('canvas');
     this.canvas.setAttribute('height', 720);
-    this.canvas.setAttribute('width', 1280);
+    this.canvas.setAttribute('width', 720);
     this.context = this.canvas.getContext('2d');
     this.start();
   }
@@ -52,7 +52,7 @@ export class CaptureComponent implements OnInit {
   start() {
     // Forces camera to be backfacing, therefore breaking desktop view
     // this.initCamera({ video: { facingMode: { exact: 'environment' } }, audio: false });
-    this.initCamera({ video: true, audio: false });
+    this.initCamera({ video: { width: 720, height: 720 }, audio: false });
   }
 
   initCamera(config: any) {

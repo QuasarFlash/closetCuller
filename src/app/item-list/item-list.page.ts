@@ -23,12 +23,6 @@ export class ItemListPage implements OnInit {
       take(1)
     ).subscribe();
     this.items$ = this.closetSvc.getItems(this.type);
-    this.items$.subscribe((items) => {
-      // const snap: QueryDocumentSnapshot = items[0].payload.doc;
-      // console.log(snap.id);
-      // console.log(snap.data());
-      console.log(items);
-    });
   }
 
   ngOnInit() {
