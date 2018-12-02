@@ -13,7 +13,7 @@ export class SuggestionsPage implements OnInit {
   month: 'month';
   year: 'year';
   type: string;
-  images: Array<string> = [];
+  items$: any;
 
   constructor(
     private closetSvc: ClosetService) {
@@ -25,16 +25,7 @@ export class SuggestionsPage implements OnInit {
     this.displayItems(Event);
   }
   displayItems($event) {
-    this.closetSvc.getItems(this.type).subscribe(data => {
-      data.forEach( (value: any) => {
-      console.log(value.picUrl);
-        try {
-          this.images.push(value.picUrl);
-        } catch (err) {
-          console.log('No image here');
-        }
-    });
-  });
+    this.items$ = this.closetSvc.getItems(this.type);
   }
 
 }
