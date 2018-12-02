@@ -11,7 +11,7 @@
           [disabled]="!type"
           class="btn btn-primary"
         >
-          Capture
+          {{this.image ? 'Retake' : 'Capture'}}
         </ion-button>
       </ion-col>
       <ion-col>

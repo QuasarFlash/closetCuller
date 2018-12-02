@@ -28,6 +28,11 @@ export class CaptureComponent implements OnInit {
   }
 
   capture() {
+    if (this.image) {
+      this.image = null;
+      this.video.play();
+      return;
+    }
     this.context.drawImage(this.video, 0, 0);
     this.canvas.toBlob(blob => {
       this.image = blob;
