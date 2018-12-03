@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,18 +12,22 @@ export class LoginPage implements OnInit {
   username:string;
   password:string;
 
-  constructor(private authSvc: AuthService) { }
+  constructor(private authSvc: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
 
   loginGoogle() {
-    this.authSvc.login();
+    this.authSvc.loginGoogle();
   }
 
   login() {
-    console.log("Username " + this.username);
-    console.log("Password " + this.password);
+    this.authSvc.login(this.username, this.password);
+  }
+
+  register() {
+    console.log("Attempting to create account");
+    this.router.navigate(['/register']);
   }
 
 }
