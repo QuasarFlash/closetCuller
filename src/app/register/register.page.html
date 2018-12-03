@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content padding>
-  <h3 text-align="center"> Login </h3>
+  <h3 text-align="center"> Register </h3>
   <ion-list>
     <ion-item>
       <ion-label color="primary">Email</ion-label>
@@ -15,9 +15,10 @@
       <ion-label color="primary">Password</ion-label>
       <ion-input style="text-align:right;" type=password placeholder="*******" [(ngModel)]="password" ></ion-input>
     </ion-item>
+    <ion-item>
+      <ion-label color="primary">Confirm Password</ion-label>
+      <ion-input style="text-align:right;" type=password placeholder="*******" [(ngModel)]="confirmPassword" ></ion-input>
+    </ion-item>
   </ion-list>
-  <ion-button shape="round" (click)="login()">Login</ion-button>
-  <ion-button shape="round" (click)="loginGoogle()">Login with Google</ion-button>
-  <br><br><br><br><br>
-  <ion-button shape="round" (click)="register()">Create an account!</ion-button>
+  <ion-button shape="round" (click)="createUser()">Create!</ion-button>
 </ion-content>
