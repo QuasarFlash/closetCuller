@@ -1,25 +1,20 @@
-// source: https://codepen.io/dudleystorey/pen/Kgofa
-.flex-container {
-    padding: .5vw;
-    font-size: 0;
-    display: -ms-flexbox;
-    -ms-flex-wrap: wrap;
-    -ms-flex-direction: column;
-    -webkit-flex-flow: row wrap; 
-    flex-flow: row wrap; 
-    display: -webkit-box;
-    display: flex;
-    
-  }
-  
-  .flex-item {
-    -webkit-box-flex: auto;
-    -ms-flex: auto;
-    flex: auto; 
-    width: 200px; 
-    margin: .5vw;
-  }
-  ion-card {
-    width: 100%; 
-    height: auto; 
-  }
+ion-img {
+  height: 80px;
+  width: auto;
+}
+
+img {
+  align-items: center;
+}
+
+ion-card-title {
+  font-size:16px;
+}
+
+ion-card-header {
+  text-align: center;
+}
+
+ion-card {
+  margin: 0 0;
+}
