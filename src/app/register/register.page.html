@@ -1,23 +1,26 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title text-center>Welcome to Closet Culler</ion-title>
+    <ion-title text-center>Closet Culler</ion-title>
+    <ion-buttons>
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <h3 text-align="center"> Register </h3>
+  <h3> Register </h3>
   <ion-list>
     <ion-item>
       <ion-label color="primary">Email</ion-label>
-      <ion-input style="text-align:right;" placeholder="johndoe@gmail.com" [(ngModel)]="username" ></ion-input>
+      <ion-input placeholder="johndoe@gmail.com" [(ngModel)]="username" ></ion-input>
     </ion-item>
     <ion-item>
       <ion-label color="primary">Password</ion-label>
-      <ion-input style="text-align:right;" type=password placeholder="*******" [(ngModel)]="password" ></ion-input>
+      <ion-input type=password placeholder="*******" [(ngModel)]="password" ></ion-input>
     </ion-item>
     <ion-item>
       <ion-label color="primary">Confirm Password</ion-label>
-      <ion-input style="text-align:right;" type=password placeholder="*******" [(ngModel)]="confirmPassword" ></ion-input>
+      <ion-input type=password placeholder="*******" [(ngModel)]="confirmPassword" ></ion-input>
     </ion-item>
   </ion-list>
   <ion-button shape="round" (click)="createUser()">Create!</ion-button>
