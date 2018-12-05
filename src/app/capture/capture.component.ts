@@ -57,7 +57,8 @@ export class CaptureComponent implements OnInit {
   start() {
     // Forces camera to be backfacing, therefore breaking desktop view
     // this.initCamera({ video: { facingMode: { exact: 'environment' } }, audio: false });
-    this.initCamera({ video: { width: 720, height: 720 }, audio: false });
+    // this.initCamera({ video: { width: 720, height: 720 }, audio: false });
+    this.initCamera({ video: true, audio: false });
   }
 
   initCamera(config: any) {
