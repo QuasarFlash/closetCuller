@@ -29,21 +29,21 @@
         </div>
         
         <div *ngSwitchCase="'week'">
-          <ion-range min="1" max="52" step="1" snaps="true" [(ngModel)]="total" color="danger">
+          <ion-range min="0" max="52" step="1" snaps="true" [(ngModel)]="total" color="danger">
             <ion-icon range-left small color="danger" name="thermometer"></ion-icon>
             <ion-icon range-right color="danger" name="thermometer"></ion-icon>
           </ion-range>
         </div>
 
         <div *ngSwitchCase="'month'">
-          <ion-range min="1" max="12" step="1" snaps="true" [(ngModel)]="total" color="danger">
+          <ion-range min="0" max="12" step="1" snaps="true" [(ngModel)]="total" color="danger">
             <ion-icon range-left small color="danger" name="thermometer"></ion-icon>
             <ion-icon range-right color="danger" name="thermometer"></ion-icon> 
           </ion-range>
         </div>
 
         <div *ngSwitchCase="'year'">
-          <ion-range min="1" max="5" step="1" snaps="true" [(ngModel)]="total" color="danger">
+          <ion-range min="0" max="5" step="1" snaps="true" [(ngModel)]="total" color="danger">
             <ion-icon range-left small color="danger" name="thermometer"></ion-icon>
             <ion-icon range-right color="danger" name="thermometer"></ion-icon> 
           </ion-range>
