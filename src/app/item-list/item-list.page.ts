@@ -28,8 +28,7 @@ export class ItemListPage implements OnInit {
   }
 
   getDays(mill) {
-    let full_time = (mill.seconds * 1000) + mill.nanoseconds/1000;
-    let days = (Date.now() - full_time) / (1000 * 60 * 60 * 24);
+    let days = (Date.now() - mill) / (1000 * 60 * 60 * 24);
     days = Math.floor(days);
     return days;
   }
