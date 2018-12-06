@@ -30,7 +30,8 @@ export class ClosetService {
     await picRef.put(pic);
     picRef.getDownloadURL().subscribe(url => {
       itemRef.update({
-        picUrl: url
+        picUrl: url,
+        id: itemRef.id
       });
     });
   }
