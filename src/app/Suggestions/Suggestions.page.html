@@ -63,7 +63,8 @@
         <ion-row>
           <ion-col *ngFor="let image of images" class="flex-container">
             <ion-card class="flex-item"> 
-              <ion-img [src]= "image" ></ion-img>
+              <ion-img [src]= "image.picUrl" ></ion-img>
+              <ion-card-content>Last worn {{ TimeRangeItems(image.last_worn) }}</ion-card-content>
             </ion-card>
           </ion-col>
         </ion-row>
