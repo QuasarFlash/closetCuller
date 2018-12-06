@@ -20,7 +20,6 @@ export class SuggestionsPage implements OnInit {
   constructor(
     private closetSvc: ClosetService) {
       this.type = 'tshirt';
-    this.time = this.week;
   }
   ngOnInit() {
     console.log('show suggestions');
