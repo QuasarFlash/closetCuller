@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { AuthService } from './auth.service';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,8 @@ export class ClosetService {
   constructor(
     private afs: AngularFirestore,
     private storage: AngularFireStorage,
-    private authSvc: AuthService
+    private authSvc: AuthService,
+    private http: HttpClient
   ) {
     this.uid = this.authSvc.currentUserID;
     this.date = Date.now();
@@ -34,6 +36,15 @@ export class ClosetService {
         id: itemRef.id
       });
     });
+  }
+
+  updateItem(id) {
+    const url = 'http://localhost:5000/closet-culler/us-central1/api/updateItem';
+    const uid = this.authSvc.currentUserID;
+    this.http.post(url, {
+      itemId: id,
+      uid: uid
+    }).subscribe(console.log);
   }
 
   getItems(type) {

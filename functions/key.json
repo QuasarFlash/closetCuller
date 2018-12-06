@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "closet-culler",
+  "private_key_id": "a6590f472795fb7f7c376151916cb930a37dcc83",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCMMTL/FesPdnR/\nEYa8URz7UGEaMUIh6409JJ/e0QZ8YkAHGbtRcsVKS0fyJT/WCe/iq5UXL25vWuMu\nwgYf3CWqduMsYfqo9eKghrlcalZO1s3HlmfRhF2zyftcD51wXFoG12oC5ehlIKzI\nmVpG7RsAyrquRaVEYMfM5GYFSDSgkSBSRtUcLJgcfPc51VuNInK8afezcxp4WQZc\n2s3bm9ly2SgoOhQzWqvuTH+7ZBXk8qF56afG3Ak8yER3WIGapeZe/Je8PbjUTa9u\nXPKI737nVjiF+kMSyFlSk2zP1/cr9oSUnxg/NJ9j/peD3R3qM3X6NkL7wI4PmtnX\ngtlovTzvAgMBAAECggEAQhd1u8VpBmapYDhyhThWSfKofJEpZNVoRiGMjx6LCLvH\nBLHwWeMaOL7J4dIGyNDxezK5/G67iRrXjLUi7wU56qXWzpc4dUxKdbReEb/+BXgG\nFmiFdESLalW4PzwLVKvtM1l93HTn/TkMzBtj8JkaiGKK5NrnoZdgymsI38edK+7c\nk7XyjkSJVvaG3AsaSLPMxuXzyhkTE0uf+PfiX9rCaVW/nFkFRt/TzNOYUdjj1jkF\ndSZUn5dVN76dfflEc8tSj3HHFVlYaxVQw1DmI0rqps4+oLT29CJmvepP/D/k51bY\nB3JhIyBau2Sj0etqrfNnr+EoCyYIPjqWPkMnn1zBRQKBgQDC98SN3FA+tVf/UEJW\nV4LDH3nSxe2bLpHHShTj/XzWI2tv9rCnqfhfA/nskhJ0NrTbrPnSolsmqd12h24I\n6ZcAwyfLoQqT60P4KHlMxICXFKUsY4tGCR9J/G0ZwFvPl/JXhmfyGmRrJW38D3lZ\naEulIqJ0Svx6HCO3Tn7ryiinBQKBgQC4E9kW/uh8p5Aatj2JtUohwn3BCv60HFzR\ncKBxUQ42HyikT6RUsgIPbgd65rmId1qKCc45MYMteeqZd5FUfrML8t65LjuRjJm1\n8SqU/+MTeXriV3lPpUetw+soKi2u76EqsiH7f0Kn8Krrw3mbo6HDUUNLrI1QdrRV\nYcAIISbuYwKBgB4QivS9NnqVCD7Mp44c7IMeRXDlKKC3a69pkxMdMbTrvVOEnPUd\n1rkAKff7BnF5RiZh5BxBAQFTTF1MwQEK1Eg/z9Eswi7RJqgLxbi6zIF/o4DW0NE5\n8uM7068W5JF8gthQV5MT0sxa9zzZPgM1fAS49IguUAScdj18E0JU6DPpAoGAHUor\nNNmCrLMM3vM4f3z1OsHzuI/DT21j53+ASAeZt0rl8J8rir54TXQ4hHnJ88jqAyTk\nR311XfsUNS8tVMCERNZ0UgrlN5ejraueFu9QdnzR7Mn2Z5HpAeE2vcFYW4mNn3mQ\npq/tL0PALpt/8h/rUWTQzG28Xp1EvIE9SQ3dX/kCgYAzZlKzKFEiu9kTqZ6/uk+h\npj2Su/M2y/B8nHTBpLcVCGj6yu3KUD7K8uxFXLNeAQz9OAco+TRNRvlaMqBOUutf\n9VAFdfLRE0i+M8r14NIJlkxVhH9rV14ZGtNkWE7yV+/rJ1WIQN/35wL0UitiEmhA\nLTGdxizuu8orJSP0g4XCDg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-qg56y@closet-culler.iam.gserviceaccount.com",
+  "client_id": "110551442103751868126",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-qg56y%40closet-culler.iam.gserviceaccount.com"
+}

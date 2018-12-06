@@ -8,11 +8,11 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card *ngFor="let item of (items$ | async)">
+  <ion-card *ngFor="let item of (items$ | async); let i = index">
     <ion-img [src]="item.picUrl"></ion-img>
     <ion-card-content>
       <ion-text>Last worn {{ getDays(item.last_worn) }} days ago.</ion-text>
-      <ion-toggle (ionChange)='wearingToday(item)'></ion-toggle>
+      <ion-toggle #toggle (ionChange)='wearingToday(item, i)'></ion-toggle>
     </ion-card-content>
   </ion-card>
 </ion-content>

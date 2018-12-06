@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { tap, take, } from 'rxjs/operators';
+import { tap, take, map, } from 'rxjs/operators';
 import { ClosetService } from '../closet.service';
 import { Observable } from 'rxjs';
+import { Toggle } from '@ionic/angular';
 
 @Component({
   selector: 'app-item-list',
@@ -13,6 +14,7 @@ export class ItemListPage implements OnInit {
 
   type: string;
   items$: Observable<any>;
+  @ViewChildren('toggle') toggles;
 
   constructor(
     private route: ActivatedRoute,
@@ -31,8 +33,12 @@ export class ItemListPage implements OnInit {
     return days;
   }
 
-  wearingToday(item) {
-    console.log(item);
+  wearingToday(item, index) {
+    this.toggles.forEach((toggle: Toggle, i: number) => {
+      if (i !== index) {
+        toggle.checked = false;
+      }
+    });
   }
 
   ngOnInit() {
