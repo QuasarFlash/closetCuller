@@ -31,6 +31,10 @@ export class ItemListPage implements OnInit {
     return days;
   }
 
+  wearingToday(item) {
+    console.log(item);
+  }
+
   ngOnInit() {
   }
 
