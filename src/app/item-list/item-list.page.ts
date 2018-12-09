@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { tap, take, map, } from 'rxjs/operators';
 import { ClosetService } from '../closet.service';
 import { Observable } from 'rxjs';
-import { Toggle } from '@ionic/angular';
+import { Toggle, Card } from '@ionic/angular';
 
 @Component({
   selector: 'app-item-list',
@@ -15,8 +15,11 @@ export class ItemListPage implements OnInit {
   type: string;
   items$: Observable<any>;
   toggleCheck = true;
+  editing = false;
   selectedId: string;
+  selectedIds: Array<String> = [];
   @ViewChildren('toggle') toggles: QueryList<Toggle>;
+  @ViewChildren('card') cards: QueryList<Toggle>;
 
   constructor(
     private route: ActivatedRoute,
@@ -29,6 +32,20 @@ export class ItemListPage implements OnInit {
     this.items$ = this.closetSvc.getItems(this.type);
   }
 
+  selectItem(item, i) {
+    if (this.editing) {
+      this.cards.forEach((card: Card, index) => {
+        if (index === i) {
+          card.color = card.color ? undefined : 'danger';
+        }
+      });
+
+      this.selectedIds.includes(item.id) ? this.selectedIds.splice(this.selectedIds.indexOf(item.id), 1) : this.selectedIds.push(item.id);
+    }
+
+    console.log(this.selectedIds);
+  }
+
   getDays(mill) {
     let days = (Date.now() - mill) / (1000 * 60 * 60 * 24);
     days = Math.floor(days);
@@ -36,8 +53,11 @@ export class ItemListPage implements OnInit {
   }
 
   confirm() {
-    this.closetSvc.updateItem(this.selectedId);
+    if (this.selectedId) {
+      this.closetSvc.updateItem(this.selectedId);
+    }
     this.selectedId = null;
+    this.editing = false;
   }
 
   wearingToday(item, index) {

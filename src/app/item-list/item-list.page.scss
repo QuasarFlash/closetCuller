@@ -3,5 +3,13 @@ ion-card-content {
 }
 
 ion-toggle {
-    padding-left: 15%;
+  padding-left: 15%;
+}
+
+ion-checkbox {
+  padding-left: 20%;
+}
+
+.selected {
+  --background: var(--ion-color-danger);
 }

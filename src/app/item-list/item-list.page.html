@@ -5,17 +5,20 @@
       <ion-back-button defaultHref="tabs/(home:home)"></ion-back-button>
     </ion-buttons>
     <ion-buttons slot="end">
-      <ion-button *ngIf="selectedId" (click)="confirm()"> Confirm </ion-button>
+      <ion-button *ngIf="selectedId" (click)="confirm()"> confirm </ion-button>
+      <ion-button *ngIf="editing && selectedIds.length" (click)="confirm()"> delete </ion-button>
+      <ion-button *ngIf="!selectedId && !editing" (click)="editing = true"> edit </ion-button>
+      <ion-button *ngIf="editing && !selectedIds.length" (click)="editing = false"> cancel </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-card *ngFor="let item of (items$ | async); let i = index">
+  <ion-card #card (click)='selectItem(item, i)' *ngFor="let item of (items$ | async); let i = index">
     <ion-img [src]="item.picUrl"></ion-img>
     <ion-card-content>
       <ion-text>Last worn {{ getDays(item.last_worn) }} days ago.</ion-text>
-      <ion-toggle #toggle (ionChange)='wearingToday(item, i)'></ion-toggle>
+      <ion-toggle [disabled]="editing" #toggle (ionChange)='wearingToday(item, i)'></ion-toggle>
     </ion-card-content>
   </ion-card>
 </ion-content>
