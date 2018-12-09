@@ -35,6 +35,11 @@ export class ItemListPage implements OnInit {
     return days;
   }
 
+  confirm() {
+    this.closetSvc.updateItem(this.selectedId);
+    this.selectedId = null;
+  }
+
   wearingToday(item, index) {
     if (this.toggleCheck) {
       this.toggleCheck = false;
