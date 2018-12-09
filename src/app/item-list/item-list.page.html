@@ -14,7 +14,7 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card #card (click)='selectItem(item, i)' *ngFor="let item of (items$ | async); let i = index">
+  <ion-card #card [class.selectable]='editing' (click)='selectItem(item, i)' *ngFor="let item of (items$ | async); let i = index">
     <ion-img [src]="item.picUrl"></ion-img>
     <ion-card-content>
       <ion-text>Last worn {{ getDays(item.last_worn) }} days ago.</ion-text>
