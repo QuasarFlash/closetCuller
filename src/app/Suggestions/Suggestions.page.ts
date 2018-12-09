@@ -31,11 +31,9 @@ export class SuggestionsPage implements OnInit {
 
   }
   displayItems($event) {
-    console.log("HEre");
     this.images$ = this.closetSvc.getItems(this.type).pipe(
       map(items => {
         return items.filter((item: any) => {
-          console.log(this.total);
           var CapDate = new Date(item.last_worn);
           if((this.time === this.day) && this.getDays(CapDate) >= this.total){
             return true;
@@ -61,7 +59,6 @@ export class SuggestionsPage implements OnInit {
     var full_time = (imgdate);
 
     var CaptureDate = new Date(full_time);
-    console.log(CaptureDate);
     var result: any;
 
     if (this.time == this.day) {

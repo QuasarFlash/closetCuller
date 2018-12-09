@@ -21,9 +21,6 @@ export class CaptureComponent implements OnInit {
     console.log('in capture component');
     this.video = this.videoElement.nativeElement;
     this.canvas = document.createElement('canvas');
-    this.canvas.setAttribute('height', 720);
-    this.canvas.setAttribute('width', 720);
-    this.context = this.canvas.getContext('2d');
     this.start();
   }
 
@@ -33,7 +30,14 @@ export class CaptureComponent implements OnInit {
       this.video.play();
       return;
     }
-    this.context.drawImage(this.video, 0, 0);
+    var vidHeight = this.videoElement.nativeElement.videoHeight;
+    var vidWidth = this.videoElement.nativeElement.videoWidth;
+    
+    this.canvas.setAttribute('height', vidHeight);
+    this.canvas.setAttribute('width', vidWidth);
+    this.context = this.canvas.getContext('2d');
+
+    this.context.drawImage(this.video, 0, 0, vidWidth, vidHeight);
     this.canvas.toBlob(blob => {
       this.image = blob;
     });
