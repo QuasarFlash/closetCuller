@@ -2,7 +2,6 @@ import * as functions from 'firebase-functions';
 const express = require('express');
 const cors = require('cors');
 import * as admin from 'firebase-admin';
-import { QuerySnapshot } from '@google-cloud/firestore';
 const svcAct = require('../key.json');
 admin.initializeApp({
     credential: admin.credential.cert(svcAct),
@@ -37,7 +36,7 @@ app.post('/deleteItems', async (req, res) => {
     const itemIds: Array<string> = req.body.itemIds;
     const uid = req.body.uid;
     await db.collection(`users/${uid}/clothes`).get()
-    .then((snap: QuerySnapshot) => {
+    .then((snap) => {
         const batch = db.batch();
         snap.forEach(doc => {
             if (itemIds.includes(doc.id)) {
@@ -46,7 +45,7 @@ app.post('/deleteItems', async (req, res) => {
         });
         return batch.commit();
     }).then(ret => {
-        res.send('success');
+        res.send({response: ret });
     }).catch(err => {
         res.send(err);
     });
