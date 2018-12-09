@@ -42,8 +42,10 @@ export class ItemListPage implements OnInit {
 
       this.selectedIds.includes(item.id) ? this.selectedIds.splice(this.selectedIds.indexOf(item.id), 1) : this.selectedIds.push(item.id);
     }
+  }
 
-    console.log(this.selectedIds);
+  delete() {
+    this.closetSvc.deleteItems(this.selectedIds);
   }
 
   getDays(mill) {

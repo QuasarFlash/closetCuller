@@ -36,7 +36,7 @@ app.post('/updateItem', async (req, res) => {
 app.post('/deleteItems', async (req, res) => {
     const itemIds: Array<string> = req.body.itemIds;
     const uid = req.body.uid;
-    const closetRef = await db.collection(`users/${uid}/clothes`).get()
+    await db.collection(`users/${uid}/clothes`).get()
     .then((snap: QuerySnapshot) => {
         const batch = db.batch();
         snap.forEach(doc => {
@@ -46,7 +46,7 @@ app.post('/deleteItems', async (req, res) => {
         });
         return batch.commit();
     }).then(ret => {
-        res.send(ret);
+        res.send('success');
     }).catch(err => {
         res.send(err);
     });

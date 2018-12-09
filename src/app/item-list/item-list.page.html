@@ -6,7 +6,7 @@
     </ion-buttons>
     <ion-buttons slot="end">
       <ion-button *ngIf="selectedId" (click)="confirm()"> confirm </ion-button>
-      <ion-button *ngIf="editing && selectedIds.length" (click)="confirm()"> delete </ion-button>
+      <ion-button *ngIf="editing && selectedIds.length" (click)="delete()"> delete </ion-button>
       <ion-button *ngIf="!selectedId && !editing" (click)="editing = true"> edit </ion-button>
       <ion-button *ngIf="editing && !selectedIds.length" (click)="editing = false"> cancel </ion-button>
     </ion-buttons>

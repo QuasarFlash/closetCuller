@@ -41,10 +41,19 @@ export class ClosetService {
   updateItem(id) {
     const url = 'http://localhost:5000/closet-culler/us-central1/api/updateItem';
     const uid = this.authSvc.currentUserID;
-    this.http.post(url, {
+    return this.http.post(url, {
       itemId: id,
       uid: uid
-    }).subscribe(console.log);
+    });
+  }
+
+  deleteItems(ids) {
+    const url = 'http://localhost:5000/closet-culler/us-central1/api/deleteItems';
+    const uid = this.authSvc.currentUserID;
+    return this.http.post(url, {
+      itemIds: ids,
+      uid: uid
+    });
   }
 
   getItems(type) {
