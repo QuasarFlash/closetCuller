@@ -15,6 +15,7 @@ export class ItemListPage implements OnInit {
   type: string;
   items$: Observable<any>;
   toggleCheck = true;
+  selectedId: string;
   @ViewChildren('toggle') toggles: QueryList<Toggle>;
 
   constructor(
@@ -40,6 +41,8 @@ export class ItemListPage implements OnInit {
       this.toggles.forEach((toggle: Toggle, i: number) => {
         if (i !== index) {
           toggle.checked = false;
+        } else {
+          this.selectedId = toggle.checked ? item.id : null;
         }
       });
     } else {

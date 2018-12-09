@@ -4,6 +4,9 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="tabs/(home:home)"></ion-back-button>
     </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="selectedId" (click)="confirm()"> Confirm </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
