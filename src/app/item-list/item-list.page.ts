@@ -45,7 +45,9 @@ export class ItemListPage implements OnInit {
   }
 
   delete() {
-    this.closetSvc.deleteItems(this.selectedIds);
+    this.closetSvc.deleteItems(this.selectedIds).pipe(
+      take(1)
+    ).subscribe();
   }
 
   getDays(mill) {
@@ -56,7 +58,9 @@ export class ItemListPage implements OnInit {
 
   confirm() {
     if (this.selectedId) {
-      this.closetSvc.updateItem(this.selectedId);
+      this.closetSvc.updateItem(this.selectedId).pipe(
+        take(1)
+      ).subscribe();
     }
     this.selectedId = null;
     this.editing = false;
