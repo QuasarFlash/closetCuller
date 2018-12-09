@@ -14,7 +14,8 @@ export class ItemListPage implements OnInit {
 
   type: string;
   items$: Observable<any>;
-  @ViewChildren('toggle') toggles;
+  toggleCheck = true;
+  @ViewChildren('toggle') toggles: QueryList<Toggle>;
 
   constructor(
     private route: ActivatedRoute,
@@ -34,11 +35,18 @@ export class ItemListPage implements OnInit {
   }
 
   wearingToday(item, index) {
-    this.toggles.forEach((toggle: Toggle, i: number) => {
-      if (i !== index) {
-        toggle.checked = false;
-      }
-    });
+    if (this.toggleCheck) {
+      this.toggleCheck = false;
+      this.toggles.forEach((toggle: Toggle, i: number) => {
+        if (i !== index) {
+          toggle.checked = false;
+        }
+      });
+    } else {
+      return;
+    }
+
+    this.toggleCheck = true;
   }
 
   ngOnInit() {
