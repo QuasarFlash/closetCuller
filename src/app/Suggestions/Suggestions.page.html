@@ -54,8 +54,12 @@
       <ion-item>
         <ion-label>Filter </ion-label>
         <ion-select [(ngModel)]="type" (ionChange)='displayItems($event)'>
-            <ion-select-option value="tshirt" selected>T-shirt</ion-select-option>
+            <ion-select-option value="shirt" selected>Shirts</ion-select-option>
             <ion-select-option value="pants">Pants</ion-select-option>
+            <ion-select-option value="jacket">Jackets</ion-select-option>
+            <ion-select-option value="sweater">Sweaters</ion-select-option>
+            <ion-select-option value="shoes">Shoes</ion-select-option>
+            <ion-select-option value="hat">Hats</ion-select-option>
         </ion-select>
       </ion-item>
   </div>
